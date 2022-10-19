@@ -3,9 +3,24 @@ title: "Nancy_Assignment4"
 output: html_notebook
 ---
 
-
+# Q2: Loading Packages  
 ```{r}
-plot(cars)
+library(tidyverse)
+library(ggthemes)
+```
+# Q3: Loading data 
+```{r}
+assignment4 = read_csv("a4_data.csv")
+```
+# Q4: Rows and Columns 
+```{r}
+nrow(assignment4)
+ncol(assignment4)
+```
+There are 3700 rows and 12 columns in the file.
+# Q
+```{r}
+
 ```
 
 

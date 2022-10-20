@@ -53,7 +53,7 @@ phonological = assignment4 %>% filter(prime_condition == "phonological" & accura
 ```{r}
 subject_acc = assignment4 %>%
   group_by(subject) %>%
-  summarize(mean(accuracy))
+  summarize(mean_acc = mean(accuracy))
 ```
 # Q10: Summarizing accuracy per prime condition
 sd()
@@ -61,15 +61,49 @@ sd()
 # Calculate the mean accuracy and standard deviation of accuracy for each prime condition
 prime_acc = assignment4 %>%
   group_by(prime_condition) %>%
-  summarise(mean(accuracy), sd(accuracy))
+  summarise(mean_acc = mean(accuracy), sd_acc = sd(accuracy))
 ```
-# Q11: 
+# Q11: Histogram of subject accuracy
 ```{r}
-
+subject_acc %>% 
+  ggplot(aes(x = mean_acc)) +
+  theme_few() + 
+  geom_histogram(binwidth = 0.2, position = "identity", fill = "skyblue", color = "blue") + 
+  labs(x = "mean accuracy", y = "count", title = "Histogram of mean subject accuracy")
 ```
-# Q
+# Q12: Bar plot of prime condition
 ```{r}
-
+prime_acc %>%
+  ggplot(aes(x = prime_condition, y = mean_acc)) +
+  theme_few() +
+  geom_col(fill = "skyblue", color = "blue") + 
+  labs(x = "prime condition", y = "mean accuracy", title = "Mean accuracy across prime condition")
 ```
+# Q13: Data interpretation
+Phonological primes resulted in the highest accuracy; unrelated primes resulted 
+in the lowest accuracy. Both kinds of primes and unrelated primes resulted in
+similar accuracy.
+# Q14: Summarizing accuracy per prime condition and state 
+```{r}
+state_prime_acc = assignment4 %>% 
+  group_by(prime_condition, state) %>%
+  summarize(mean_acc = mean(accuracy))
+```
+# Q15: Bar plot of prime condition and state
+Using the dataframe “state_prime_acc”, draw an
+unstacked bar plot showing how the accuracy (Y)
+varies as a function of the four prime conditions
+(X), such that the bars are color coded by the
+reported state (see expected plot below).
+Hint: use position = “dodge” for unstacking the
+bars
+```{r}
+state_prime_acc %>%
+  ggplot(aes(x = prime_condition, y = mean_acc, fill = state)) + 
+  theme_few() + 
+  geom_col(position = "dodge") + 
+  labs(x = "prime condition", y = "mean accuracy", title = "Mean accuracy across prime condition and reported states")
+```
+
 
 

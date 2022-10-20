@@ -90,13 +90,6 @@ state_prime_acc = assignment4 %>%
   summarize(mean_acc = mean(accuracy))
 ```
 # Q15: Bar plot of prime condition and state
-Using the dataframe “state_prime_acc”, draw an
-unstacked bar plot showing how the accuracy (Y)
-varies as a function of the four prime conditions
-(X), such that the bars are color coded by the
-reported state (see expected plot below).
-Hint: use position = “dodge” for unstacking the
-bars
 ```{r}
 state_prime_acc %>%
   ggplot(aes(x = prime_condition, y = mean_acc, fill = state)) + 

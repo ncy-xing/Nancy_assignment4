@@ -1817,7 +1817,111 @@ dbl (5): subject, trial, state_RT, response_RT, accuracy
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>There are 3700 rows and 12 columns in the file. # Q</p>
+<p>There are 3700 rows and 12 columns in the file. # Q5: Unique
+participants and trials</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXNzaWdubWVudDQgJT4lIFxuICBwdWxsKHN1YmplY3QpICU+JVxuICB1bmlxdWUoKVxuYGBgIn0= -->
+<pre class="r"><code>assignment4 %&gt;% 
+  pull(subject) %&gt;%
+  unique()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSA1OSA2MCA2MSA2MiA2MyA2NCA2NSA2NiA2NyA2OCA2OSA3MCA3MSA3MiA3NCA3NSA3NiA3NyA3OCA3OSA4MCA4MSA4MiA4MyA4NCA4NSA4NiA4NyA4OFxuWzMwXSA4OSA5MCA5MSA5MiA5MyA5NCA5NSA5N1xuIn0= -->
+<pre><code> [1] 59 60 61 62 63 64 65 66 67 68 69 70 71 72 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88
+[30] 89 90 91 92 93 94 95 97</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXNzaWdubWVudDQgJT4lXG4gIGdyb3VwX2J5KHN1YmplY3QpICU+JVxuICBjb3VudCgpXG5gYGAifQ== -->
+<pre class="r"><code>assignment4 %&gt;%
+  group_by(subject) %&gt;%
+  count()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjM3LCJuY29sIjoyLCJzdW1tYXJ5Ijp7IkEgdGliYmxlIjpbIjM3IMOXIDIiXSwiR3JvdXBzIjpbInN1YmplY3QgWzM3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE4MlN6VTZFTUJESEM0S2JKWEUxOFJuMkNKZTllT1Jndk9rdTMxeTdnSXBpMmZBUlBmcG92b2Z2c2ppRmY3UEtFMGd5N2N6L041MTJhUDNiZEdPbEZtUHNqQms2alNhNXpJekNPL3VHalFyVG1NR1djdjRnZkUyT0ZGZGthL2YrVTJZejk0RmhScnhGdkVXOFE3eHpNU3Y5YTVvOWNBL2NBL2ZBZlhBZnVnODlnQjVnWFFBZWdJZmdJWGdJSG9KSDRCRjRCQjZCeCtBeGVBd2VneWZnQ1hnQ25vQ25rMDdmQmRtYUxQOS85dWVTemF6aWJVdk8xUy9SeW5uSG5jZUd2eFd6OUdWVHZ6dUM5Qlk5NnZJUERNUHdQYStya21SZEhlS2k3ZmN2UmRhcEJ5Wm9PTTRXTHVwRFY5YUNsdXJ5N1ptem8ybk5UTGpzaGR3cXQ3UG5YcnphRzNuOEVaL3VRY05kS0YrZnRqUUdsREpSNnJ3UVQ2VW9WQWNWM3hjVmdoWDFQWGJrSEpwU3FBWXNVbHVucXp1dThxeXNycFF5OXNhT1AzcGdUenh5QXdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["subject"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"59","2":"100"},{"1":"60","2":"100"},{"1":"61","2":"100"},{"1":"62","2":"100"},{"1":"63","2":"100"},{"1":"64","2":"100"},{"1":"65","2":"100"},{"1":"66","2":"100"},{"1":"67","2":"100"},{"1":"68","2":"100"},{"1":"69","2":"100"},{"1":"70","2":"100"},{"1":"71","2":"100"},{"1":"72","2":"100"},{"1":"74","2":"100"},{"1":"75","2":"100"},{"1":"76","2":"100"},{"1":"77","2":"100"},{"1":"78","2":"100"},{"1":"79","2":"100"},{"1":"80","2":"100"},{"1":"81","2":"100"},{"1":"82","2":"100"},{"1":"83","2":"100"},{"1":"84","2":"100"},{"1":"85","2":"100"},{"1":"86","2":"100"},{"1":"87","2":"100"},{"1":"88","2":"100"},{"1":"89","2":"100"},{"1":"90","2":"100"},{"1":"91","2":"100"},{"1":"92","2":"100"},{"1":"93","2":"100"},{"1":"94","2":"100"},{"1":"95","2":"100"},{"1":"97","2":"100"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[37]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The file has 38 unique subjects; each subject did 100 trials. # Q6:
+Levels of variables</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb252ZXJ0IHByaW1lX2NvbmRpdGlvbiBpbnRvIGEgZmFjdG9yXG5hc3NpZ25tZW50NCA9IGFzc2lnbm1lbnQ0ICU+JSBcbiAgbXV0YXRlKHByaW1lX2NvbmRpdGlvbiA9IGFzLmZhY3RvcihwcmltZV9jb25kaXRpb24pLFxuICAgICAgICAgc3RhdGUgPSBhcy5mYWN0b3Ioc3RhdGUpKVxubGV2ZWxzKGFzc2lnbm1lbnQ0ICU+JSBwdWxsKHByaW1lX2NvbmRpdGlvbikpXG5gYGAifQ== -->
+<pre class="r"><code># Convert prime_condition into a factor
+assignment4 = assignment4 %&gt;% 
+  mutate(prime_condition = as.factor(prime_condition),
+         state = as.factor(state))
+levels(assignment4 %&gt;% pull(prime_condition))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYm90aFwiICAgICAgICAgXCJwaG9ub2xvZ2ljYWxcIiBcInNlbWFudGljXCIgICAgIFwidW5yZWxhdGVkXCIgICBcbiJ9 -->
+<pre><code>[1] &quot;both&quot;         &quot;phonological&quot; &quot;semantic&quot;     &quot;unrelated&quot;   </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKGFzc2lnbm1lbnQ0ICU+JSBwdWxsKHN0YXRlKSlcbmBgYCJ9 -->
+<pre class="r"><code>levels(assignment4 %&gt;% pull(state))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZG9udGtub3dcIiAgICBcImtub3dcIiAgICAgICAgXCJvdGhlclwiICAgICAgIFwidGlwb2Z0b25ndWVcIlxuIn0= -->
+<pre><code>[1] &quot;dontknow&quot;    &quot;know&quot;        &quot;other&quot;       &quot;tipoftongue&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The “prime condition” variable has 4 levels. The “state” variable has
+4 levels. # Q7: Subsets of Columns</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbWVfaW5mb3JtYXRpb24gPSBhc3NpZ25tZW50NCAlPiUgc2VsZWN0KHN1YmplY3QsIHByaW1lX2NvbmRpdGlvbilcbmBgYCJ9 -->
+<pre class="r"><code>prime_information = assignment4 %&gt;% select(subject, prime_condition)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="q8-subsets-of-rows" class="section level1">
+<h1>Q8: Subsets of Rows</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSBuZXcgZGF0YWZyYW1lIGNvbnRhaW5zIG9ubHkgcm93cyB3aGVyZSB0aGUgcHJpbWUgY29uZGl0aW9uIGlzIHBob25vbG9naWNhbCBhbmQgYWNjdXJhY3kgaXMgMVxucGhvbm9sb2dpY2FsID0gYXNzaWdubWVudDQgJT4lIGZpbHRlcihwcmltZV9jb25kaXRpb24gPT0gXCJwaG9ub2xvZ2ljYWxcIiAmIGFjY3VyYWN5ID09IDEpXG5gYGAifQ== -->
+<pre class="r"><code># Create a new dataframe contains only rows where the prime condition is phonological and accuracy is 1
+phonological = assignment4 %&gt;% filter(prime_condition == &quot;phonological&quot; &amp; accuracy == 1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="q9-summarizing-mean-accuracy-per-subject" class="section level1">
+<h1>Q9: Summarizing mean accuracy per subject</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ViamVjdF9hY2MgPSBhc3NpZ25tZW50NCAlPiVcbiAgZ3JvdXBfYnkoc3ViamVjdCkgJT4lXG4gIHN1bW1hcml6ZShtZWFuKGFjY3VyYWN5KSlcbmBgYCJ9 -->
+<pre class="r"><code>subject_acc = assignment4 %&gt;%
+  group_by(subject) %&gt;%
+  summarize(mean(accuracy))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="q10-summarizing-accuracy-per-prime-condition" class="section level1">
+<h1>Q10: Summarizing accuracy per prime condition</h1>
+<p>sd()</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDYWxjdWxhdGUgdGhlIG1lYW4gYWNjdXJhY3kgYW5kIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBhY2N1cmFjeSBmb3IgZWFjaCBwcmltZSBjb25kaXRpb25cbnByaW1lX2FjYyA9IGFzc2lnbm1lbnQ0ICU+JVxuICBncm91cF9ieShwcmltZV9jb25kaXRpb24pICU+JVxuICBzdW1tYXJpc2UobWVhbihhY2N1cmFjeSksIHNkKGFjY3VyYWN5KSlcbmBgYCJ9 -->
+<pre class="r"><code># Calculate the mean accuracy and standard deviation of accuracy for each prime condition
+prime_acc = assignment4 %&gt;%
+  group_by(prime_condition) %&gt;%
+  summarise(mean(accuracy), sd(accuracy))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="q11" class="section level1">
+<h1>Q11:</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="q" class="section level1">
+<h1>Q</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
@@ -1825,7 +1929,7 @@ dbl (5): subject, trial, state_RT, response_RT, accuracy
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTmFuY3lfQXNzaWdubWVudDQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgUTI6IExvYWRpbmcgUGFja2FnZXMgIApgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZ2d0aGVtZXMpCmBgYAojIFEzOiBMb2FkaW5nIGRhdGEgCmBgYHtyfQphc3NpZ25tZW50NCA9IHJlYWRfY3N2KCJhNF9kYXRhLmNzdiIpCmBgYAojIFE0OiBSb3dzIGFuZCBDb2x1bW5zIApgYGB7cn0KbnJvdyhhc3NpZ25tZW50NCkKbmNvbChhc3NpZ25tZW50NCkKYGBgClRoZXJlIGFyZSAzNzAwIHJvd3MgYW5kIDEyIGNvbHVtbnMgaW4gdGhlIGZpbGUuCiMgUQpgYGB7cn0KCmBgYAoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTmFuY3lfQXNzaWdubWVudDQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgUTI6IExvYWRpbmcgUGFja2FnZXMgIApgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZ2d0aGVtZXMpCmBgYAojIFEzOiBMb2FkaW5nIGRhdGEgCmBgYHtyfQphc3NpZ25tZW50NCA9IHJlYWRfY3N2KCJhNF9kYXRhLmNzdiIpCmBgYAojIFE0OiBSb3dzIGFuZCBDb2x1bW5zIApgYGB7cn0KbnJvdyhhc3NpZ25tZW50NCkKbmNvbChhc3NpZ25tZW50NCkKYGBgClRoZXJlIGFyZSAzNzAwIHJvd3MgYW5kIDEyIGNvbHVtbnMgaW4gdGhlIGZpbGUuCiMgUTU6IFVuaXF1ZSBwYXJ0aWNpcGFudHMgYW5kIHRyaWFscwpgYGB7cn0KYXNzaWdubWVudDQgJT4lIAogIHB1bGwoc3ViamVjdCkgJT4lCiAgdW5pcXVlKCkKCmFzc2lnbm1lbnQ0ICU+JQogIGdyb3VwX2J5KHN1YmplY3QpICU+JQogIGNvdW50KCkKYGBgClRoZSBmaWxlIGhhcyAzOCB1bmlxdWUgc3ViamVjdHM7IGVhY2ggc3ViamVjdCBkaWQgMTAwIHRyaWFscy4KIyBRNjogTGV2ZWxzIG9mIHZhcmlhYmxlcwpgYGB7cn0KIyBDb252ZXJ0IHByaW1lX2NvbmRpdGlvbiBpbnRvIGEgZmFjdG9yCmFzc2lnbm1lbnQ0ID0gYXNzaWdubWVudDQgJT4lIAogIG11dGF0ZShwcmltZV9jb25kaXRpb24gPSBhcy5mYWN0b3IocHJpbWVfY29uZGl0aW9uKSwKICAgICAgICAgc3RhdGUgPSBhcy5mYWN0b3Ioc3RhdGUpKQpsZXZlbHMoYXNzaWdubWVudDQgJT4lIHB1bGwocHJpbWVfY29uZGl0aW9uKSkKbGV2ZWxzKGFzc2lnbm1lbnQ0ICU+JSBwdWxsKHN0YXRlKSkKYGBgClRoZSAicHJpbWUgY29uZGl0aW9uIiB2YXJpYWJsZSBoYXMgNCBsZXZlbHMuIFRoZSAic3RhdGUiIHZhcmlhYmxlIGhhcyA0IGxldmVscy4KIyBRNzogU3Vic2V0cyBvZiBDb2x1bW5zCmBgYHtyfQojIENyZWF0ZSBhIG5ldyBkYXRhZnJhbWUgdGhhdCBjb250YWlucyBvbmx5IHRoZSBzdWJqZWN0IGFuZCBwcmltZSBjb25kaXRpb24gY29sdW1uIGZyb20gb3JpZ2luYWwgZGF0YXNldApwcmltZV9pbmZvcm1hdGlvbiA9IGFzc2lnbm1lbnQ0ICU+JSBzZWxlY3Qoc3ViamVjdCwgcHJpbWVfY29uZGl0aW9uKQpgYGAKIyBRODogU3Vic2V0cyBvZiBSb3dzCmBgYHtyfQojIENyZWF0ZSBhIG5ldyBkYXRhZnJhbWUgY29udGFpbnMgb25seSByb3dzIHdoZXJlIHRoZSBwcmltZSBjb25kaXRpb24gaXMgcGhvbm9sb2dpY2FsIGFuZCBhY2N1cmFjeSBpcyAxCnBob25vbG9naWNhbCA9IGFzc2lnbm1lbnQ0ICU+JSBmaWx0ZXIocHJpbWVfY29uZGl0aW9uID09ICJwaG9ub2xvZ2ljYWwiICYgYWNjdXJhY3kgPT0gMSkKYGBgCiMgUTk6IFN1bW1hcml6aW5nIG1lYW4gYWNjdXJhY3kgcGVyIHN1YmplY3QKYGBge3J9CnN1YmplY3RfYWNjID0gYXNzaWdubWVudDQgJT4lCiAgZ3JvdXBfYnkoc3ViamVjdCkgJT4lCiAgc3VtbWFyaXplKG1lYW4oYWNjdXJhY3kpKQpgYGAKIyBRMTA6IFN1bW1hcml6aW5nIGFjY3VyYWN5IHBlciBwcmltZSBjb25kaXRpb24Kc2QoKQpgYGB7cn0KIyBDYWxjdWxhdGUgdGhlIG1lYW4gYWNjdXJhY3kgYW5kIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBhY2N1cmFjeSBmb3IgZWFjaCBwcmltZSBjb25kaXRpb24KcHJpbWVfYWNjID0gYXNzaWdubWVudDQgJT4lCiAgZ3JvdXBfYnkocHJpbWVfY29uZGl0aW9uKSAlPiUKICBzdW1tYXJpc2UobWVhbihhY2N1cmFjeSksIHNkKGFjY3VyYWN5KSkKYGBgCiMgUTExOiAKYGBge3J9CgpgYGAKIyBRCmBgYHtyfQoKYGBgCgoK</div>
 
 
 

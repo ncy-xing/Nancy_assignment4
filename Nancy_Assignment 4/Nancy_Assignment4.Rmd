@@ -18,6 +18,55 @@ nrow(assignment4)
 ncol(assignment4)
 ```
 There are 3700 rows and 12 columns in the file.
+# Q5: Unique participants and trials
+```{r}
+assignment4 %>% 
+  pull(subject) %>%
+  unique()
+
+assignment4 %>%
+  group_by(subject) %>%
+  count()
+```
+The file has 38 unique subjects; each subject did 100 trials.
+# Q6: Levels of variables
+```{r}
+# Convert prime_condition into a factor
+assignment4 = assignment4 %>% 
+  mutate(prime_condition = as.factor(prime_condition),
+         state = as.factor(state))
+levels(assignment4 %>% pull(prime_condition))
+levels(assignment4 %>% pull(state))
+```
+The "prime condition" variable has 4 levels. The "state" variable has 4 levels.
+# Q7: Subsets of Columns
+```{r}
+# Create a new dataframe that contains only the subject and prime condition column from original dataset
+prime_information = assignment4 %>% select(subject, prime_condition)
+```
+# Q8: Subsets of Rows
+```{r}
+# Create a new dataframe contains only rows where the prime condition is phonological and accuracy is 1
+phonological = assignment4 %>% filter(prime_condition == "phonological" & accuracy == 1)
+```
+# Q9: Summarizing mean accuracy per subject
+```{r}
+subject_acc = assignment4 %>%
+  group_by(subject) %>%
+  summarize(mean(accuracy))
+```
+# Q10: Summarizing accuracy per prime condition
+sd()
+```{r}
+# Calculate the mean accuracy and standard deviation of accuracy for each prime condition
+prime_acc = assignment4 %>%
+  group_by(prime_condition) %>%
+  summarise(mean(accuracy), sd(accuracy))
+```
+# Q11: 
+```{r}
+
+```
 # Q
 ```{r}
 
